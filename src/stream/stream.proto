@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package stream;
+
+service StreamService {
+  rpc FindOne (StreamRequest) returns (StreamResponse);
+  rpc BidiStrings (stream StreamRequest) returns (stream StreamResponse);
+}
+
+message StreamRequest {
+  string greetings = 1;
+}
+
+message StreamResponse {
+  string message = 1;
+}
