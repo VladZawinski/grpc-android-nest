@@ -9,8 +9,8 @@ async function bootstrap() {
     {
       transport: Transport.GRPC,
       options: {
-        package: 'message',
-        protoPath: join(__dirname, 'message/message.proto'),
+        package: 'chat',
+        protoPath: join(__dirname, 'chat/chat.proto'),
       },
     },
   );

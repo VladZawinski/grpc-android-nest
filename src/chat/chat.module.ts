@@ -1,17 +1,17 @@
 import { Module } from '@nestjs/common';
-import { MessageController } from './message.controller';
+import { ChatController } from './chat.controller';
 import { ClientsModule } from '@nestjs/microservices';
 import { grpcClientOptions } from 'src/grpc-client.options';
 
 @Module({
-  controllers: [MessageController],
+  controllers: [ChatController],
   imports: [
     ClientsModule.register([
       {
-        name: 'MESSAGE_PACKAGE',
+        name: 'CHAT_PACKAGE',
         ...grpcClientOptions,
       },
     ]),
   ]
 })
-export class MessageModule {}
+export class ChatModule {}

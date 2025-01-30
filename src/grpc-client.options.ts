@@ -4,13 +4,9 @@ import { join } from 'path';
 export const grpcClientOptions: GrpcOptions = {
   transport: Transport.GRPC,
   options: {
-    package: ['message', 'stream'], // ['hero', 'hero2']
+    package: ['chat'],
     protoPath: [
-        join(__dirname, './message/message.proto'),
-        join(__dirname, './stream/stream.proto')
-    ], // ['./hero/hero.proto', './hero/hero2.proto']
-    // onLoadPackageDefinition: (pkg, server) => {
-    //   new ReflectionService(pkg).addToServer(server);
-    // },
+        join(__dirname, './chat/chat.proto'),
+    ],
   },
 };
