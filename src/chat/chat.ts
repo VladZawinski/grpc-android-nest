@@ -18,10 +18,15 @@ export namespace chat {
             ...rest: any[]
         ): Observable<Empty>;
         onMessageUpdated(
-            data: Empty,
+            data: Observable<Empty>,
             metadata?: Metadata,
             ...rest: any[]
-        ): Observable<ChatMessage>;
+        ): Observable<MessageList>;
+        getStockUpdates(
+            data: Observable<Empty>,
+            metadata?: Metadata,
+            ...rest: any[]
+        ): Observable<StockList>;
     }
     export interface ChatConnection {
         userId?: string;
@@ -35,6 +40,16 @@ export namespace chat {
     }
     // tslint:disable-next-line:no-empty-interface
     export interface Empty {
+    }
+    export interface MessageList {
+        messages?: chat.ChatMessage[];
+    }
+    export interface StockResponse {
+        symbol?: string;
+        price?: number;
+    }
+    export interface StockList {
+        stock?: chat.StockResponse[];
     }
 }
 
